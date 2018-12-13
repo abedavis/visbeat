@@ -12,7 +12,7 @@ try:
     import matplotlib.pyplot as plt
 except ImportError as e:
     AWARN("matplotlib problem... if you are using conda try installing with 'conda install matplotlib'")
-    matplotlib.use('TkAgg');
+    matplotlib.use('PS');
     import matplotlib.pyplot as plt
 import matplotlib.style as ms
 
@@ -39,8 +39,8 @@ def VBWARN(message):
     # warnings.showwarning = send_warnings_to_print_red;
 
 VB_MACHINE_ID = None;
-if(VB_MACHINE_ID):
-    matplotlib.use('PS');
+# if(VB_MACHINE_ID):
+    # matplotlib.use('PS');
 
 ISNOTEBOOK = False;
 if(runningInNotebook()):
@@ -58,8 +58,8 @@ if(runningInNotebook()):
     from IPython.display import HTML
     VBIPY = IPython;
     #%matplotlib inline
-else:
-    matplotlib.use('PS');
+# else:
+    # matplotlib.use('PS');
 
 
 def vb_get_ipython():

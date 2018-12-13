@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="visbeat",
-    version="0.0.2",
+    version="0.0.4",
     author="Abe Davis",
     author_email="everyonehasadance@gmail.com",
     description="Code for 'Visual Rhythm and Beat' SIGGRAPH 2018",
@@ -21,12 +21,14 @@ setuptools.setup(
     install_requires=[
         'numpy',
         'scipy',
-        'matplotlib',
-        'imageio',
+        'bs4',
         'librosa',
+        'imageio',
+        'requests',
         'moviepy',
         'termcolor',
         'youtube-dl',
+        'matplotlib',
     ],
     scripts=['bin/dancefer'],
     packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests*']),
