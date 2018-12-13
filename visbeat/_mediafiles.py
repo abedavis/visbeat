@@ -21,9 +21,11 @@ def GetTestAudioPath(filename):
 VIDEO_FILES_DIR = os.path.join(MEDIAFILES_DIR, 'video'+os.sep);
 VIDEO_FILES = [];
 VIDEO_FILE_PATHS = [];
-for filename in os.listdir(VIDEO_FILES_DIR):
-    VIDEO_FILES.append(filename);
-    VIDEO_FILE_PATHS.append(os.path.join(VIDEO_FILES_DIR, filename));
+if(os.path.exists(VIDEO_FILES_DIR)):
+    for filename in os.listdir(VIDEO_FILES_DIR):
+        VIDEO_FILES.append(filename);
+        VIDEO_FILE_PATHS.append(os.path.join(VIDEO_FILES_DIR, filename));
+
 
 
 IMAGE_FILES_DIR = os.path.join(MEDIAFILES_DIR, 'images'+os.sep);
