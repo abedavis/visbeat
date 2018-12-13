@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="visbeat",
-    version="0.0.2dev",
+    version="0.0.2",
     author="Abe Davis",
     author_email="everyonehasadance@gmail.com",
     description="Code for 'Visual Rhythm and Beat' SIGGRAPH 2018",

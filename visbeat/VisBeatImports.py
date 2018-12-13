@@ -3,11 +3,19 @@ from AImports import *
 from AObject import AObject
 import numpy as np
 import scipy as sp
-import matplotlib.pyplot as plt
+
 import os
 import imageio
+
 import matplotlib
+try:
+    import matplotlib.pyplot as plt
+except ImportError as e:
+    AWARN("matplotlib problem... if you are using conda try installing with 'conda install matplotlib'")
+    matplotlib.use('TkAgg');
+    import matplotlib.pyplot as plt
 import matplotlib.style as ms
+
 import io
 import base64
 import math
