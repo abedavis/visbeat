@@ -32,6 +32,7 @@ setuptools.setup(
     ],
     scripts=['bin/dancefer'],
     packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests*']),
+    include_package_data=True
     classifiers=[
         "Programming Language :: Python :: 2.7",
         "Operating System :: OS Independent",
