@@ -18,6 +18,16 @@ setuptools.setup(
         'Source': 'https://github.com/abedavis/visbeat',
         'Demo': 'http://www.abedavis.com/visualbeat/demo/',
     },
+    install_requires=[
+        'numpy',
+        'scipy',
+        'matplotlib',
+        'imageio',
+        'librosa',
+        'moviepy',
+        'termcolor',
+        'youtube-dl',
+    ],
     scripts=['bin/dancefer'],
     packages=setuptools.find_packages(exclude=['contrib', 'docs', 'tests*']),
     classifiers=[
