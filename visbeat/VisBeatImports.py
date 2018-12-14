@@ -12,7 +12,7 @@ try:
     import matplotlib.pyplot as plt
 except ImportError as e:
     AWARN("matplotlib problem... if you are using conda try installing with 'conda install matplotlib'")
-    matplotlib.use('PS');
+    matplotlib.use('agg');
     import matplotlib.pyplot as plt
 import matplotlib.style as ms
 
