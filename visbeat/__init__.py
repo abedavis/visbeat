@@ -23,7 +23,7 @@ def SetAssetsDir(assets_dir):
     make_sure_dir_exists(assets_dir);
     print("VISBEAT_ASSETS_DIR set to {}".format(VISBEAT_ASSETS_DIR));
     make_sure_dir_exists(GetVideoSourcesDir());
-    temp_dir = os.path.join(VISBEAT_ASSETS_DIR, 'TEMP_FILES');
+    temp_dir = os.path.join(VISBEAT_ASSETS_DIR, 'TEMP_FILES'+os.sep);
     make_sure_dir_exists(temp_dir);
     Video.VIDEO_TEMP_DIR = temp_dir;
     fileui.INITIAL_DIR = VISBEAT_ASSETS_DIR;
@@ -267,7 +267,7 @@ def AutoDancefer(source, target, output_path = None, synch_video_beat = 0, synch
     targetv = PullVideo(source_location=target);
 
     result =  Dancefer(source_video=sourcev, target=targetv, output_path=output_path, force_recompute = True, synch_audio_beat=synch_audio_beat, synch_video_beat=synch_video_beat, beat_offset=beat_offset,**kwargs)
-    AWARN("\n\n\nResult saved to {}\n\n\n".format(result.getPath()));
+    AINFORM("\n\n\nResult saved to {}\n\n\n".format(result.getPath()));
     return result;
 
 #########

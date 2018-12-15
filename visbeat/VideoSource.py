@@ -640,7 +640,7 @@ class VideoSource(AFileManager):
             os.rename(filepath, filepathsafe);
         else:
             fpath = glob.glob(output_dir + os.sep + '*' + info_dict['id'] + '.mp4');
-            assert (len(fpath) == 1), "Wrong number of tiles for {}\nFound:\n{}".format(filepath, fpath);
+            assert (len(fpath) == 1), "Wrong number of files for {}\nFound:\n{}".format(filepath, fpath);
             os.rename(fpath[0], filepathsafe);
             jpath = glob.glob(output_dir + os.sep + '*' + info_dict['id'] + '.info.json');
             os.rename(jpath[0], safe_file_name(usedfilename_withoutext + '.info.json'));

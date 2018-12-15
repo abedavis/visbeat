@@ -23,6 +23,8 @@ if(AD_DEBUG):
         from termcolor import colored
         def AWARN(message):
             print(colored(message, 'red'))
+        def AINFORM(message):
+            print(colored(message, 'blue'))
     except ImportError:
         print("You do not have termcolor installed (pip install termcolor). AWARN will just show as plain print statements when AD_DEBUG==True...")
         def AWARN(message):
