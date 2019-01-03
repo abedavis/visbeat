@@ -1,5 +1,5 @@
 #AImports
-from ADefines import *
+import ADefines as defines
 import os
 import os.path
 import errno
@@ -15,26 +15,24 @@ import random
 import fileui
 
 
-if(AD_DEBUG):
-    # import warnings
-    # warnings.simplefilter('default')
 
-    try:
-        from termcolor import colored
-        def AWARN(message):
+try:
+    from termcolor import colored
+    def AWARN(message):
+        if (defines.AD_DEBUG):
             print(colored(message, 'red'))
-        def AINFORM(message):
+    def AINFORM(message):
+        if(defines.AD_DEBUG):
             print(colored(message, 'blue'))
-    except ImportError:
-        print("You do not have termcolor installed (pip install termcolor). AWARN will just show as plain print statements when AD_DEBUG==True...")
-        def AWARN(message):
+except ImportError:
+    if (defines.AD_DEBUG):
+        print("You do not have termcolor installed (pip install termcolor). AWARN will just show as plain print statements when defines.AD_DEBUG==True...")
+    def AWARN(message):
+        if (defines.AD_DEBUG):
             print(message);
-    #
-    # def send_warnings_to_print_red(message, category, filename, lineno):
-    #     print(colored('{} WARNING! file: {} Line:{}\n{}'.format(category, filename, lineno, message), 'red'))
-    # old_showwarning = warnings.showwarning
-    # warnings.showwarning = send_warnings_to_print_red;
-
+    def AINFORM(message):
+        if (defines.AD_DEBUG):
+            print(message);
 
 def local_time_string():
     return strftime("%Y-%m-%d_%H:%M:%S", localtime());

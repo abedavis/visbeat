@@ -3,7 +3,7 @@ try:
     import vbwidget as Viewer
 except ImportError as e:
     VIEWER_INSTALLED = 0;
-    print("VBViewer not installed. Consider installing for full functionality.")
+    AWARN("VBViewer not installed. Consider installing for full functionality.")
 
 
 from ..TimeSignal import *

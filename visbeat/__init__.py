@@ -21,7 +21,7 @@ def SetAssetsDir(assets_dir):
     global VISBEAT_ASSETS_DIR;
     VISBEAT_ASSETS_DIR = assets_dir;
     make_sure_dir_exists(assets_dir);
-    print("VISBEAT_ASSETS_DIR set to {}".format(VISBEAT_ASSETS_DIR));
+    AINFORM("VISBEAT_ASSETS_DIR set to {}".format(VISBEAT_ASSETS_DIR));
     make_sure_dir_exists(GetVideoSourcesDir());
     temp_dir = os.path.join(VISBEAT_ASSETS_DIR, 'TEMP_FILES'+os.sep);
     make_sure_dir_exists(temp_dir);
