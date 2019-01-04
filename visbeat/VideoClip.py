@@ -61,7 +61,8 @@ class VideoClip(Video):
 
     def n_frames(self):
         #return self.getLastFrameIndex()-self.getFirstFrameIndex();
-        return math.ceil((self.end-self.start)*self.sampling_rate);
+        #return math.ceil((self.end-self.start)*self.sampling_rate);
+        return int(math.ceil((self.end-self.start)*self.sampling_rate));
 
     # def getFirstFrameIndex(self):
     #     return math.floor(self.start*self.sampling_rate);
