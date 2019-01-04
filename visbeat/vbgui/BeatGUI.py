@@ -1,10 +1,11 @@
+from visbeat.AImports import *
+
 VIEWER_INSTALLED = 1;
 try:
     import vbwidget as Viewer
 except ImportError as e:
     VIEWER_INSTALLED = 0;
     AWARN("VBViewer not installed. Consider installing for full functionality.")
-
 
 from ..TimeSignal import *
 from ..EventList import *
