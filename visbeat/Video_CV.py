@@ -1,4 +1,4 @@
-# from Video import *
+from Video import *
 from Image import *
 from Event import *
 from VisualBeat import *
@@ -71,14 +71,6 @@ if(USING_OPENCV):
             result = self.visualBeatFunction(**params);
             self.setFeature(name=feature_name, value=result, params=params);
         return self.getFeature(feature_name);
-
-    # ##################################################################### #
-
-    ##########################################################################
-    # ###################################################################### #
-    ##########################################################################
-
-
 
     def cvGetGrayFrame(self, f):
         colorframe = self.getFrame(f).astype(np.uint8);

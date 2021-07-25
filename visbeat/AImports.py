@@ -4,7 +4,7 @@ import os
 import os.path
 import errno
 import json
-import cPickle as pickle
+import pickle
 import glob
 import subprocess
 from operator import truediv
@@ -117,7 +117,7 @@ def is_interactive():
 
 def printOb(obj):
   for attr in dir(obj):
-    print "#### Obj.%s = %s\n" % (attr, getattr(obj, attr))
+    print("#### Obj.%s = %s\n" % (attr, getattr(obj, attr)))
 
 def pathstring(path):
     return path.replace(os.sep+os.sep, os.sep);
@@ -139,18 +139,18 @@ def printDictionary(obj):
     if type(obj) == dict:
         for k, v in obj.items():
             if hasattr(v, '__iter__'):
-                print k
+                print(k)
                 printDictionary(v)
             else:
-                print '%s : %s' % (k, v)
+                print('%s : %s' % (k, v))
     elif type(obj) == list:
         for v in obj:
             if hasattr(v, '__iter__'):
                 printDictionary(v)
             else:
-                print v
+                print(v)
     else:
-        print obj
+        print(obj)
 
 def spotgt_shift_bit_length(x):
     #smallest power of two greater than
