@@ -1,11 +1,10 @@
-
 from VisBeatImports import *
 from Video import *
 from VideoClip import *
 from VideoSource import *
 from VisBeatExampleVideo import VisBeatExampleVideo
 import re
-import os;
+import os
 import shutil
 
 
@@ -125,7 +124,7 @@ def Dancefer(source_video, target,
 
     if((output_path is not None) and (not force_recompute)):
         if(os.path.exists(output_path)):
-            return Video(output_path);
+            return Video(output_path)
 
     if(isinstance(target, Video)):
         target_audio = target.getAudio();
@@ -145,7 +144,7 @@ def Dancefer(source_video, target,
     start_audio_beat = synchaudio-lead_in;
     start_video_beat = synchvideo-lead_in;
 
-    if(beat_offset and beat_offset>0):
+    if beat_offset and (beat_offset>0):
         start_audio_beat = start_audio_beat+beat_offset;
         start_video_beat = start_video_beat+beat_offset;
 
@@ -201,7 +200,7 @@ def Dancefer(source_video, target,
             target_newbeat.start = min(target_newbeat.start+deltatime, target_audio.getDuration());
             tbeats.append(target_newbeat);
 
-    if(warp_type is 'weight'):
+    if(warp_type == 'weight'):
         vbeats = source_video.visualBeatsFromEvents(vbeats);
 
     if(name_tag is None):
@@ -265,7 +264,6 @@ def get_temp_file_path(final_file_path="TEMP", temp_dir_path = None):
 def AutoDancefer(source, target, output_path = None, synch_video_beat = 0, synch_audio_beat = 0, beat_offset = 0, **kwargs):
     sourcev = PullVideo(source_location=source);
     targetv = PullVideo(source_location=target);
-
     result =  Dancefer(source_video=sourcev, target=targetv, output_path=output_path, force_recompute = True, synch_audio_beat=synch_audio_beat, synch_video_beat=synch_video_beat, beat_offset=beat_offset,**kwargs)
     AINFORM("\n\n\nResult saved to {}\n\n\n".format(result.getPath()));
     return result;
@@ -388,7 +386,7 @@ def Dancify(source_video, target,
     if (len(tbeats) > len(vbeats)):
         tbeats = tbeats[:len(vbeats)];
 
-    if(warp_type is 'weight'):
+    if(warp_type == 'weight'):
         vbeats = source_video.visualBeatsFromEvents(vbeats);
 
     if(name_tag is None):

@@ -1,9 +1,0 @@
-# Include the README
-include *.md
-
-# Include the license file
-include LICENSE
-include LICENSE.pdf
-
-# Include the data files
-recursive-include visbeat/_assets *
